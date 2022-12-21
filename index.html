@@ -1,0 +1,156 @@
+<!-- csicsás karácsonyi weboldal-->
+<!DOCTYPE html>
+<html lang="hu">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Boldog karácsonyt Babiiii!</title>
+        <style type="text/css">
+            #before-click {
+                display: block;
+            }
+            #after-click {
+                display: none;
+            }
+            .video-container {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            @import url('https://fonts.googleapis.com/css2?family=Amatic+SC&family=Open+Sans:wght@700&family=Raleway:wght@100;400&family=Roboto&display=swap');
+            body {
+                font-family: 'Amatic SC', cursive;
+                font-family: 'Open Sans', sans-serif;
+                font-family: 'Raleway', sans-serif;
+                font-family: 'Roboto', sans-serif;
+                background-image: url('https://i.pinimg.com/originals/0f/b0/0d/0fb00de0a8160cb7165bf92343615413.gif');
+                color: #000;
+            }
+
+            header {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: red;
+                font-size: 5rem;
+                text-align: center;
+                animation: spin 0.3s infinite linear;
+                text-shadow: 0 0 10px #fff;
+            }
+
+            h1 {
+                font-size: 5rem;
+                text-align: center;
+            }
+
+            button {
+                font-size: 2rem;
+                padding: 1rem 2rem;
+                border: none;
+                border-radius: 5px;
+                /* from green to red */
+                background-color: #ff000099;
+                color: #fff;
+                cursor: pointer;
+                animation: buttonFlashing 1s infinite linear;
+            }
+
+            button:hover {
+                background-color: #00ff0099;
+                color: #fff;
+            }
+
+            video {
+                width: 640px;
+                height: 360px;
+                border: 5px solid red;
+            }
+
+            @keyframes spin {
+                0% {
+                    transform: translateY(0);
+                }
+                50% {
+                    transform: translateY(-10px);
+                }
+                100% {
+                    transform: translateY(0);
+                }
+            }
+
+            @keyframes buttonFlashing {
+                0% {
+                    background-color: #ff000099;
+                }
+                50% {
+                    background-color: #00ff0099;
+                }
+                100% {
+                    background-color: #ff000099;
+                }
+            }
+
+            main {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+            }
+
+            h2 {
+                font-size: 5rem;
+                text-align: center;
+                color: red;
+                text-shadow: 0 0 10px #fff;
+                animation: textFlashing 0.3s infinite linear;
+            }
+
+            @keyframes textFlashing {
+                0% {
+                    color: #ff0000;
+                }
+                50% {
+                    color: #ff000099;
+                }
+                100% {
+                    color: #ff0000;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div id="before-click">
+            <header>
+                <h1>Boldog karácsonyt Babiiii!</h1>
+            </header>
+            <main>
+                <button id="click-me">Kattints ide az ajándékodért!</button>
+            </main>
+        </div>
+        <div id="after-click">
+            <div class="video-container">
+                <video
+                    autoplay
+                    playsinline
+                    src="alek_monolog.mp4"
+                    controls
+                    width="100%"
+                    height="100%"
+                ></video>
+            </div>
+            <div class="video-container">
+                <h2>SZERETLEEEEEEEEEEEEEEK</h2>
+            </div>
+        </div>
+        <script>
+            const beforeClick = document.getElementById('before-click');
+            const afterClick = document.getElementById('after-click');
+            const clickMe = document.getElementById('click-me');
+            clickMe.addEventListener('click', () => {
+                beforeClick.style.display = 'none';
+                afterClick.style.display = 'block';
+            });
+        </script>
+    </body>
+</html>
